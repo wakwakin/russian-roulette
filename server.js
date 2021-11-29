@@ -229,9 +229,9 @@ function checkUser(username, password) {
 }
 
 const mongoose = require('mongoose')
-mongoose.connect('mongodb+srv://krepolicious:k3nch1154n@speakable.yl5jd.mongodb.net/russianroulette?retryWrites=true&w=majority').then(() => {
+mongoose.connect(process.env.DB_URI).then(() => {
   console.log('MongoDB READY')
-  httpServer.listen(3000, console.log('Port READY'))
+  httpServer.listen(process.env.PORT, console.log('Port READY'))
 }).catch((error) => {
   console.log(error)
 })
