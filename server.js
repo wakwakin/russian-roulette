@@ -110,6 +110,7 @@ app.post('/user/matching', async (req, res) => {
   })
 
   await Users.findOne({ username: req.body.username }).then(async result => {
+    console.log(result)
     if (result.matching == 'true') {
       await Users.find({ matching: 'true' }).then(async users => {
         if (!users) return res.send({ success: false, enemy: 'NONE' })
