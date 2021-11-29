@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Russian Roulette</title>
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  </head>
+  <body>
+    <div class="rr-modal">
+      <span>Match found!</span>
+    </div>
+    <div class="rr-navigation">
+      <button id="rr-rankings" class="rr-navs"><i class="fas fa-trophy"></i></button>
+      <button id="rr-matching-online" class="rr-navs"><i class="fas fa-globe-asia"></i></button>
+      <button id="rr-logout" class="rr-navs"><i class="fas fa-sign-out-alt"></i></button>
+    </div>
+    <div class="rr-rankings-page">
+      <table id="rr-ranking-table">
+      </table>
+    </div>
+    <div class="rr-matching-online-page">
+      <div class="rr-play-area">
+        <div class="rr-rounds">
+          <span><i id="rr-1" class="fas"></i></span>
+          <span><i id="rr-2" class="fas"></i></span>
+          <span><i id="rr-3" class="fas"></i></span>
+          <span><i id="rr-4" class="fas"></i></span>
+          <span><i id="rr-5" class="fas"></i></span>
+          <span><i id="rr-6" class="fas"></i></span>
+        </div>
+        <div class="rr-label">
+          <span></span>
+        </div>
+        <div id="rr-gun" class="rr-revolver rr-default">
+          <audio id="idle" src="sounds/idle.mp3"></audio>
+          <audio id="pew" src="sounds/pew.mp3"></audio>
+          <audio id="oof" src="sounds/oof.mp3"></audio>
+          <audio id="reload" src="sounds/reload.mp3"></audio>
+          <audio id="yeahboi" src="sounds/win.mp3"></audio>
+        </div>
+        <div class="rr-play-result">
+          <span></span>
+        </div>
+      </div>
+      <button id="rr-find-match" playing="false">Find match</button>
+    </div>
+    <% if (!logged_in) { %>
+    <div class="rr-form-wrapper">
+        <div class="rr-form">
+          <input id="rr-username" type="text" placeholder="Username" minlength="6" maxlength="8">
+          <input id="rr-password" type="password" placeholder="Password">
+          <button id="rr-register">Register</button>
+          <button id="rr-login">Login</button>
+          <span id="rr-error-message">Username not found</span>
+        </div>
+    </div>
+    <% } %>
+  </body>
+  <script src="js/main.js"></script>
+</html>

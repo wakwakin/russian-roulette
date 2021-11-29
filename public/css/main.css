@@ -1,0 +1,170 @@
+* { padding: 0; margin: 0; box-sizing: border-box; font-family: consolas; text-transform: uppercase; }
+body {
+  background-color: #AAA;
+}
+.rr-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  background-color: #666;
+  padding: 2.5rem 0;
+  display: none;
+}
+.rr-modal span {
+  display: block;
+  font-size: 2.5rem;
+  background-color: #000;
+  padding: 2.5rem 0;
+  color: #FFF;
+}
+
+.rr-form-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rr-form {
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 300px;
+  box-shadow: 0 0 1rem #000;
+}
+.rr-form input {
+  width: 100%;
+  font-size: 1.5rem;
+  padding: 0.75rem;
+  display: block;
+}
+.rr-form button {
+  width: 50%;
+  font-size: 1.25rem;
+  padding: 0.5rem;
+  float: left;
+}
+.rr-form span {
+  padding: 0.75rem;
+  font-size: 1.5rem;
+  color: #FFF;
+  display: none;
+}
+
+.rr-navigation {
+  width: 100%;
+  display: flex;
+}
+.rr-navs {
+  flex-basis: 100%;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
+.rr-rankings-page {
+  width: 100%;
+  display: none;
+  justify-content: center;
+}
+.rr-rankings-page table {
+  width: 100%;
+}
+.rr-rankings-page table tr {
+  display: flex;
+}
+.rr-rankings-page table tr:first-child th {
+  font-size: 2rem;
+  background-color: #000;
+  color: #FFF;
+  padding: 1rem;
+}
+.rr-rankings-page table tr:nth-child(even) th {
+  background-color: #AAA;
+}
+.rr-rankings-page table tr:last-child th {
+  font-size: 2rem;
+  padding: 0.25rem;
+  background-color: #666;
+  color: #FFF;
+}
+.rr-rankings-page table tr th {
+  flex-basis: 100%;
+  font-size: 1.5rem;
+}
+
+.rr-matching-online-page {
+  width: 100%;
+  display: none;
+}
+.rr-matching-online-page button {
+  width: 100%;
+  font-size: 2rem;
+  padding: 1rem;
+}
+.rr-play-area {
+  width: 100%;
+  height: calc(100vh - 8.55rem);
+}
+.rr-rounds {
+  text-align: center;
+  padding: 2rem 0.5rem;
+}
+.rr-rounds span {
+  font-size: 2rem;
+}
+.rr-label {
+  width: 100%;
+  display: block;
+  text-align: center;
+  padding: 2rem 0;
+}
+.rr-label span {
+  font-size: 3rem;
+  font-weight: bold;
+}
+.rr-revolver {
+  display: block;
+  margin: 0 auto;
+  width: 140px;
+  height: 90px;
+  background-image: url('../images/revolver.png');
+}
+.rr-default {
+  background-position: 0 0;
+}
+.rr-miss {
+  background-position: 0 -90px;
+}
+.rr-shot {
+  background-position: 0 -180px;
+}
+.rr-reload-1 {
+  background-position: 0 -270px;
+}
+.rr-reload-2 {
+  background-position: 0 -360px;
+}
+.rr-reload-3 {
+  background-position: 0 -450px;
+}
+.rr-reload-4 {
+  background-position: 0 -540px;
+}
+.rr-play-result {
+  display: block;
+  width: 100%;
+  margin: 2rem auto;
+  font-size: 2.5rem;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .rr-modal span {
+    font-size: 5rem;
+  }
+  .rr-form {
+    width: 420px;
+  }
+}
