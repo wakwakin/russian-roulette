@@ -133,7 +133,8 @@ app.post('/user/matching', async (req, res) => {
               })
               await newRecord.save()
               return res.send({ success: true, enemy: users[i].username, match_id: id })
-            } catch {
+            } catch (e) {
+              console.log(e)
               return res.send({ success: false })
             }
           }
