@@ -115,16 +115,17 @@ app.post('/user/matching', async (req, res) => {
       await Users.find({ matching: 'true' }).then(async users => {
         if (!users) return res.send({ success: false, enemy: 'NONE' })
         for (i = 0; i < users.length; i++) {
-          if (users[i].username != req.body.username) {
+          const theUser = users[i].username
+          if (theUser != req.body.username) {
             try {
-              await Users.findOneAndUpdate({ username: users[i].username }, { enemy: req.body.username, matching: false })
-              await Users.findOneAndUpdate({ username: req.body.username }, { enemy: users[i].username, matching: false })
+              await Users.findOneAndUpdate({ username: theUser }, { enemy: req.body.username, matching: false })
+              await Users.findOneAndUpdate({ username: req.body.username }, { enemy: theUser, matching: false })
               var bullet = [0, 0, 0, 0, 0, 0]
               const rnd = parseInt(Math.random() * bullet.length)
               bullet[rnd] = 1
               const id = Date.now()
               const newRecord = new Records({
-                username: users[i].username,
+                username: theUser,
                 enemy: req.body.username,
                 winner: 'TBD',
                 bullets: bullet.toString(),
@@ -132,7 +133,7 @@ app.post('/user/matching', async (req, res) => {
                 turns: 0
               })
               await newRecord.save()
-              return res.send({ success: true, enemy: users[i].username, match_id: id })
+              return res.send({ success: true, enemy: theUser, match_id: id })
             } catch (e) {
               console.log(e)
               return res.send({ success: false })
